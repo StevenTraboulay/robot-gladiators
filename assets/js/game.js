@@ -1,3 +1,9 @@
+//Game States
+//"Win" - player robot has defaeted all enemy robots
+//        * Fight all enemy robo
+//        * Defeat each enemy robot
+// "Lose" - player robots health is zero or less
+
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
@@ -7,7 +13,18 @@ var playerMoney = 10;
 console.log(playerName, playerAttack, playerHealth);
 
 //defined the enemies name
-var enemyName = "Roborto";
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
+//console log for enemy names
+console.log( enemyNames);
+
+//for code testing
+for(var i = 0; i < enemyNames.length; i++){
+  console.log(enemyNames[i]);
+  console.log(i);
+  console.log(enemyNames[i] + i + " is at " + i + " index ");
+  
+}
+
 //defined the enemies health
 var enemyHealth = 50;
 //defined the enemies attack strength
@@ -31,22 +48,22 @@ var fight = function() {
 enemyHealth = enemyHealth - playerAttack;
   // Log a resulting message to the console so we know that it worked.
 console.log(
-  playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth +" health remaining "
+  playerName + " attacked " + enemyNames + ". " + enemyNames + " now has " + enemyHealth +" health remaining "
 );
 // check enemy's health
 if (enemyHealth <=0) {
-  window.alert(enemyName + " has died!");
+  window.alert(enemyNames + " has died!");
 }
 
 else {
-  window.alert(enemyName + " still has " + enemyHealth + " health left.")
+  window.alert(enemyNames + " still has " + enemyHealth + " health left.")
 }
 
   // Subtract the value of `enemyAttack` from the value of `playerHealth` and use that result to update the value in the `playerHealth` variable.
 playerHealth = playerHealth - enemyAttack;
   // Log a resulting message to the console so we know that it worked.
 console.log(
-  enemyName + " attacked " + playerName + " . " + playerName + " now has " + playerHealth + " health remaining "
+  enemyNames + " attacked " + playerName + " . " + playerName + " now has " + playerHealth + " health remaining "
 );
 
 //check player's health
@@ -83,5 +100,5 @@ else{
 };
 
 //execute function
-fight();
+//fight();
 
