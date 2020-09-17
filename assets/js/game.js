@@ -112,7 +112,7 @@ var fight = function (enemyName) {
 var startGame = function () {
   //reset player stats
 
-  PlayerHealth = 100;
+  playerHealth = 100;
   playerAttack = 10;
   playerMoney = 10;
 
